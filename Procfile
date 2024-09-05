@@ -1,2 +1,2 @@
-web: streamlit run your_script_name.py --server.port=$PORT
+web: streamlit run main.py --server.port=$PORT
 
