@@ -16,12 +16,19 @@ st.write("Welcome to my portfolio of AI projects!")
 
 st.sidebar.link_button(
     label="Home",
-    url="https://smartaiclub.com/")
-
+    url="https://main.smartaiclub.com/")
 st.sidebar.link_button(
     label="Chatbot",
     url="https://openai.smartaiclub.com/")
-
+st.sidebar.link_button(
+    label="Stock Analysis",
+    url="https://finance.smartaiclub.com/")
+st.sidebar.link_button(
+    label="Newslettr Generator",
+    url="https://crewai.smartaiclub.com/")
+st.sidebar.link_button(
+    label="About Me",
+    url="https://ishan.smartaiclub.com/")
 
 # Custom CSS to set the background image and improve readability
 # Custom CSS with updated title colors
@@ -77,10 +84,10 @@ st.plotly_chart(fig)
 
 # Create a dataframe with project information
 projects = pd.DataFrame({
-    "ProjectName": ["Newsletter Generator", "Image Classification", "Chatbot", "Recommendation System"],
+    "ProjectName": ["Newsletter Generator", "Stock Analyzer", "Chatbot", "Recommendation System"],
     "Description": [
         "Analyzes sentiment of text using NLP techniques",
-        "Classifies images using convolutional neural networks",
+        "use yahoo finance api to analyze stock prices using convolutional neural networks",
         "An AI-powered conversational agent",
         "Recommends products based on user preferences"
     ],
@@ -94,10 +101,12 @@ def get_status_url(ProjectName):
         return "https://crewai.smartaiclub.com/"
     elif ProjectName == "Chatbot":
         return "https://openai.smartaiclub.com/"
-    elif ProjectName == "Image Classification":
-        return "https://crewai.smartaiclub.com/"
+    elif ProjectName == "Stock Analyzer":
+        return "https://finance.smartaiclub.com/"
+    elif ProjectName == "Recommendation System":
+        return "https://finance.smartaiclub.com/"
     else:
-        return "https://smartaiclub.com/"
+        return "https://main.smartaiclub.com/"
 
 # Add a new column with hyperlinks
 projects['Project Link'] = projects['ProjectName'].apply(lambda x: f'<a href="{get_status_url(x)}" target="_blank">{x}</a>')
