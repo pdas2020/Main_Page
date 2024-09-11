@@ -8,10 +8,6 @@ import pydeck as pdk
 # Set page configuration
 st.set_page_config(page_title="AI Project Dashboard", layout="wide")
 
-# Title and introduction
-st.title("My AI Projects Dashboard")
-st.write("Welcome to my portfolio of AI projects!")
-
 # sidebar
 
 st.sidebar.link_button(
@@ -24,11 +20,15 @@ st.sidebar.link_button(
     label="Stock Analysis",
     url="https://finance.smartaiclub.com/")
 st.sidebar.link_button(
-    label="Newslettr Generator",
+    label="Newsletter Generator",
     url="https://crewai.smartaiclub.com/")
+st.sidebar.link_button(
+    label="Basketball Player Stats",
+    url="https://basketball.smartaiclub.com/")
 st.sidebar.link_button(
     label="About Me",
     url="https://ishan.smartaiclub.com/")
+
 
 # Custom CSS to set the background image and improve readability
 # Custom CSS with updated title colors
@@ -71,8 +71,8 @@ p {
 """
 
 st.markdown(background_image, unsafe_allow_html=True)
-
-st.write("Sample Visualization dashboard displaying countrieswise GDP and life expectancy. Welcome to my portfolio of AI projects!")
+st.title("AI Projects Dashboard")
+st.write("Sample Visualization dashboard displaying countrieswise GDP and life expectancy. ")
 # Create a chart
 df = px.data.gapminder()
 fig = px.scatter(df, x="gdpPercap", y="lifeExp", animation_frame="year", 
@@ -84,15 +84,15 @@ st.plotly_chart(fig)
 
 # Create a dataframe with project information
 projects = pd.DataFrame({
-    "ProjectName": ["Newsletter Generator", "Stock Analyzer", "Chatbot", "Recommendation System"],
+    "ProjectName": ["Newsletter Generator", "Stock Analyzer", "Chatbot", "Basketball Player Stats"],
     "Description": [
-        "Analyzes sentiment of text using NLP techniques",
-        "use yahoo finance api to analyze stock prices using convolutional neural networks",
+        "The newsletter-gen Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks",
+        "Used yahoo finance api to analyze stock prices using convolutional neural networks",
         "An AI-powered conversational agent",
-        "Recommends products based on user preferences"
+        "Provides insights into players career records using machine learning algorithms"
     ],
-    "Technologies": ["CrewAI, Langchain", "TensorFlow, Keras", "OpenAI, Streamlit", "Surprise, Pandas"],
-    "Status": ["Completed", "In Progress", "Completed", "In Progress"]
+    "Technologies": ["CrewAI, Langchain", "TensorFlow, Keras", "OpenAI, Streamlit", "matplotlib,numpy, Pandas"],
+    "Status": ["Completed", "In Progress", "Completed", "Completed"]
 })
 
 # Define a function to generate URLs based on status
@@ -103,8 +103,8 @@ def get_status_url(ProjectName):
         return "https://openai.smartaiclub.com/"
     elif ProjectName == "Stock Analyzer":
         return "https://finance.smartaiclub.com/"
-    elif ProjectName == "Recommendation System":
-        return "https://finance.smartaiclub.com/"
+    elif ProjectName == "Basketball Player Stats":
+        return "https://basketball.smartaiclub.com/"
     else:
         return "https://main.smartaiclub.com/"
 
@@ -129,11 +129,11 @@ if selected_project:
     
 # Skills section
 st.header("Skills")
-skills = ["Python", "Machine Learning", "Deep Learning", "Natural Language Processing", "Computer Vision"]
+skills = ["Python", "Machine Learning", "Deep Learning", "Natural Language Processing", "Computer Vision","GenAI", "CrewAI", "OpenAI", "Streamlit"]
 st.write(", ".join(skills))
 
 # Map section
-st.header("Project Locations")
+st.header("My Location")
 
 # Create two columns
 col1, col2 = st.columns([1, 2])
@@ -168,13 +168,9 @@ with col1:
         ],
     ))
 with col2:
+    # Contact information
+    st.header("Contact Information")
+    st.write("Email: ishand2015@gmail.com")
+    st.write("LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/ishan-das-63600731a/)")
+    st.write("GitHub: [Your GitHub Profile](https://github.com/WildingMender19)")
     st.write("© 2024 Ishan Das. All rights reserved.")
-
-# Contact information
-st.header("Contact Information")
-st.write("Email: ishand2015@gmail.com")
-st.write("LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/ishan-das-63600731a/)")
-st.write("GitHub: [Your GitHub Profile](https://github.com/WildingMender19)")
-# Add a footer
-st.markdown("---")
-st.write("© 2024 Ishan das. All rights reserved.")
