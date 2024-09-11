@@ -20,6 +20,9 @@ st.sidebar.link_button(
     label="Stock Analysis",
     url="https://finance.smartaiclub.com/")
 st.sidebar.link_button(
+    label="Breast Cancer Analysis",
+    url="https://research.smartaiclub.com/")
+st.sidebar.link_button(
     label="Newsletter Generator",
     url="https://crewai.smartaiclub.com/")
 st.sidebar.link_button(
@@ -84,15 +87,16 @@ st.plotly_chart(fig)
 
 # Create a dataframe with project information
 projects = pd.DataFrame({
-    "ProjectName": ["Newsletter Generator", "Stock Analyzer", "Chatbot", "Basketball Player Stats"],
+    "ProjectName": ["Newsletter Generator", "Stock Analyzer", "Chatbot", "Breast Cancer Analysis", "Basketball Player Stats"],
     "Description": [
         "The newsletter-gen Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks",
         "Used yahoo finance api to analyze stock prices using convolutional neural networks",
         "An AI-powered conversational agent",
+        "Analyze breast cancer data using machine learning algorithms",
         "Provides insights into players career records using machine learning algorithms"
     ],
-    "Technologies": ["CrewAI, Langchain", "TensorFlow, Keras", "OpenAI, Streamlit", "matplotlib,numpy, Pandas"],
-    "Status": ["In Progress", "Completed", "Completed", "Completed"]
+    "Technologies": ["CrewAI, Langchain", "yfinance, Pandas", "OpenAI, Streamlit", "scikit_learn, numpy,pandas","matplotlib,numpy, Pandas"],
+    "Status": ["In Progress", "Completed", "Completed", "Completed","Completed"]
 })
 
 # Define a function to generate URLs based on status
@@ -105,6 +109,8 @@ def get_status_url(ProjectName):
         return "https://finance.smartaiclub.com/"
     elif ProjectName == "Basketball Player Stats":
         return "https://basketball.smartaiclub.com/"
+    elif ProjectName == "Breast Cancer Analysis":
+        return "https://research.smartaiclub.com/"
     else:
         return "https://main.smartaiclub.com/"
 
