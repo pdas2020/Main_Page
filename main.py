@@ -92,7 +92,7 @@ projects = pd.DataFrame({
         "Provides insights into players career records using machine learning algorithms"
     ],
     "Technologies": ["CrewAI, Langchain", "TensorFlow, Keras", "OpenAI, Streamlit", "matplotlib,numpy, Pandas"],
-    "Status": ["Completed", "In Progress", "Completed", "Completed"]
+    "Status": ["In Progress", "Completed", "Completed", "Completed"]
 })
 
 # Define a function to generate URLs based on status
